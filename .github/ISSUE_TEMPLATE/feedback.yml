@@ -1,0 +1,19 @@
+name: 💬 Feedback or idea
+description: Share what you liked, what felt off, or a memory method you'd like to see.
+labels: [feedback]
+body:
+  - type: textarea
+    id: thoughts
+    attributes:
+      label: Your thoughts
+      description: Anything goes — the look, Myuuel, the timing, a new memory method.
+    validations:
+      required: true
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme you used
+      options: [Lantern Night, Living Type, Both]
+  - type: markdown
+    attributes:
+      value: "Please never paste a real password — the app only ever shows fictional combinations."

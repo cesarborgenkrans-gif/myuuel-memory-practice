@@ -1,0 +1,49 @@
+{
+  "purpose": "Authored visual cues for a future controller; not AI dialogue or voice lines",
+  "start": [
+    "A quiet moment to practice.",
+    "Ready when you are."
+  ],
+  "look": [
+    "Take a look.",
+    "One little moment."
+  ],
+  "recall": [
+    "Your turn, quietly.",
+    "Try it in your mind."
+  ],
+  "check": [
+    "Have another look.",
+    "Compare at your own pace."
+  ],
+  "rest": [
+    "A little breathing room.",
+    "No hurry."
+  ],
+  "paused": [
+    "Paused."
+  ],
+  "privacy_hidden": [
+    "Hidden."
+  ],
+  "session_ended": [
+    "Session ended."
+  ],
+  "optional_self_check": {
+    "again": "Again",
+    "comfortable": "Comfortable"
+  },
+  "motion_mapping_proposal": {
+    "start": "05-happy-wave briefly, then idle",
+    "look": "01-idle-blink",
+    "recall": "04-thinking",
+    "check": "01-idle-blink",
+    "rest": "01-idle-blink",
+    "reduced_motion": "one calm idle frame",
+    "assisted_fade": "01-idle-blink; let the practice text carry the transition"
+  },
+  "assisted_fade": [
+    "A little less help.",
+    "Keep it in mind."
+  ]
+}

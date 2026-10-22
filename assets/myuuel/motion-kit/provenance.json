@@ -1,0 +1,68 @@
+{
+  "working_rule": "Use these exact reviewed engines; keep PNGs byte-identical and tune only explicit per-character rig/cloth geometry. Showcase and portable example use the same modules.",
+  "modules": [
+    {
+      "file": "modules/myuuel-smooth-motion.js",
+      "source": "runtime/motion/myuuel-smooth-motion.js",
+      "source_sha256": "3327172afeae452e1d9284b32a35194929ef063623d14519b0fd35cfee22ed99",
+      "sha256": "3327172afeae452e1d9284b32a35194929ef063623d14519b0fd35cfee22ed99",
+      "byte_identical": true
+    },
+    {
+      "file": "modules/myuuel-dress-wind.js",
+      "source": "runtime/motion/myuuel-dress-wind.js",
+      "source_sha256": "2bac5a91c22f2422f81f17010d10dfc3e036459c60ec72308319f60b853b8e71",
+      "sha256": "2bac5a91c22f2422f81f17010d10dfc3e036459c60ec72308319f60b853b8e71",
+      "byte_identical": true
+    },
+    {
+      "file": "rig/myuuel-motion-profiles.js",
+      "source": "runtime/myuuel-motion-profiles.js",
+      "source_sha256": "704ee8f8de87786b41a78bb9737fcb2ae17d4e36e486cf63d47d5959c75a9d12",
+      "sha256": "704ee8f8de87786b41a78bb9737fcb2ae17d4e36e486cf63d47d5959c75a9d12",
+      "byte_identical": true
+    },
+    {
+      "file": "rig/motion-registration.js",
+      "source": "runtime/motion-registration.js",
+      "source_sha256": "6bb3ce9e66ca7e5cd7a14648d5d738ee9421e44e3e0cadac669989611627313b",
+      "sha256": "6bb3ce9e66ca7e5cd7a14648d5d738ee9421e44e3e0cadac669989611627313b",
+      "byte_identical": true
+    },
+    {
+      "file": "rig/motion-registration.json",
+      "source": "runtime/motion-registration.json",
+      "source_sha256": "c121669c6cd6234508b4d7c6ffd3affc45bd6e961fdf67fa8c2869580ce57b39",
+      "sha256": "c121669c6cd6234508b4d7c6ffd3affc45bd6e961fdf67fa8c2869580ce57b39",
+      "byte_identical": true
+    },
+    {
+      "file": "modules/myuuel-audio-motion.js",
+      "source": "runtime/motion/sprite-audio-motion.js",
+      "source_sha256": "3000cd45e9d45bfb3f68718653a1a666dd6e2f685a7f7f0dc577e1bf9e705587",
+      "sha256": "5574eac4c0d4ffdb48a51355b881e3ef852e609491df39aeab09771b98cdfe93",
+      "reviewed_function_sha256": "b981e663fe6b8b9ec666de823d2b3d753545b283052ef8a903215b71e8088ec9",
+      "extracted_function_sha256": "b981e663fe6b8b9ec666de823d2b3d753545b283052ef8a903215b71e8088ec9",
+      "function_body_identical": true
+    }
+  ],
+  "example_png_sha256": "8252a75b95c5492497dc6be27fab8a78515b28d62139ba5f821e1e4aae40bd42",
+  "approved_pngs": {
+    "01-idle-blink": "8252a75b95c5492497dc6be27fab8a78515b28d62139ba5f821e1e4aae40bd42",
+    "02-listening": "cdc9381fa2097f298de1d0d1ee3bf8c42cfb466c654ac0ac22e2d5cbb930f072",
+    "03-speaking": "11d9d85692ef6a4e6f0092b41375aaafc37c78633ab80d05044df8cb3503ee3b",
+    "04-thinking": "ad304e6890fb762feeb842adeba557c8a423ef17c8d3565bd9a9fbee84507f16",
+    "05-happy-wave": "9f074fb1738bd7280cf6da02487e66cc591943b96c29ce6d5304a7dfd366a75b",
+    "06-edge-perch-clean": "4863dcd40392943a69a373217e0f8e41155080cc3d8e3c08225dd5d3a74f721b",
+    "07-cross-legged-focus-clean": "0e482645a6fea97b45c06766004586fa2a09c7860b2ae75451ee4734e05959fe",
+    "10-knees-hugged-rest": "cec527bebb18ebb238331239c6392370ee95e594ff3aae420e4a08b15ae6124b",
+    "11-seated-stretch-clean": "19ce04fc9e9f7d5b21992a3c045ffbd9d2b0cd07895ade87ed52c507751de3c4",
+    "12-perch-ankles-crossed": "e37c431a6f021b0a189226381f685335e95dc39afe4fd88be5f8b19f2d8e596b",
+    "13-perch-attentive-lean": "fb02812dbdd290f0aea5710901409a7a2f67f34751eaa5a5c08f684aaa9fe1c8",
+    "14-perch-small-wave": "39ff0bb43c9d5156cefe91ae574abb917e82841ddde7d3d061981006abb8b6d3",
+    "15-cross-legged-calm": "042ed88cd8c78b56ec5772cb2ecf48ae72b976273634f7f0c5009d7465231ee3",
+    "16-cross-legged-thinking": "8f9c989062b15616a0aaa2d17caa17c41c1fc71cf3cf5ed67a3d566f95434f6c",
+    "17-cross-legged-dozing": "0c3c6ba6665f826209200905fcc2fbce8beb41ccaaf2ef62abdf26906a45aa35",
+    "08-kneeling-inspect": "137cc4dc474ad556ccbd3fae719851df95cbfdc6e91dec4814286986bf8adaa0"
+  }
+}

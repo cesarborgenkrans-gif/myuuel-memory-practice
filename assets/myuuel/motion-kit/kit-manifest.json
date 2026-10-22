@@ -1,0 +1,162 @@
+[
+  {
+    "path": "approved-sheets.json",
+    "bytes": 7630,
+    "sha256": "f2cd8152b217a4a5a2d64c7edae51fcc25fe0db519e1e2fae835a8be91ce9baa"
+  },
+  {
+    "path": "assets/Myuuel - Kneeling - Inspecting.png",
+    "bytes": 1379047,
+    "sha256": "137cc4dc474ad556ccbd3fae719851df95cbfdc6e91dec4814286986bf8adaa0"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Cross-Legged Calm Breathing.png",
+    "bytes": 1137986,
+    "sha256": "042ed88cd8c78b56ec5772cb2ecf48ae72b976273634f7f0c5009d7465231ee3"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Cross-Legged Dozing.png",
+    "bytes": 1086238,
+    "sha256": "0c3c6ba6665f826209200905fcc2fbce8beb41ccaaf2ef62abdf26906a45aa35"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Cross-Legged Focus.png",
+    "bytes": 1140146,
+    "sha256": "0e482645a6fea97b45c06766004586fa2a09c7860b2ae75451ee4734e05959fe"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Cross-Legged Thinking.png",
+    "bytes": 1049656,
+    "sha256": "8f9c989062b15616a0aaa2d17caa17c41c1fc71cf3cf5ed67a3d566f95434f6c"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Edge Perch Ankles-Crossed Rest.png",
+    "bytes": 1230253,
+    "sha256": "e37c431a6f021b0a189226381f685335e95dc39afe4fd88be5f8b19f2d8e596b"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Edge Perch Attentive Lean.png",
+    "bytes": 1217681,
+    "sha256": "fb02812dbdd290f0aea5710901409a7a2f67f34751eaa5a5c08f684aaa9fe1c8"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Edge Perch Small Wave.png",
+    "bytes": 1295881,
+    "sha256": "39ff0bb43c9d5156cefe91ae574abb917e82841ddde7d3d061981006abb8b6d3"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Edge Perch.png",
+    "bytes": 1322901,
+    "sha256": "4863dcd40392943a69a373217e0f8e41155080cc3d8e3c08225dd5d3a74f721b"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Knees-Hugged Rest.png",
+    "bytes": 1193987,
+    "sha256": "cec527bebb18ebb238331239c6392370ee95e594ff3aae420e4a08b15ae6124b"
+  },
+  {
+    "path": "assets/Myuuel - Sitting - Stretch.png",
+    "bytes": 1327441,
+    "sha256": "19ce04fc9e9f7d5b21992a3c045ffbd9d2b0cd07895ade87ed52c507751de3c4"
+  },
+  {
+    "path": "assets/Myuuel - Standing - Happy Wave.png",
+    "bytes": 1489555,
+    "sha256": "9f074fb1738bd7280cf6da02487e66cc591943b96c29ce6d5304a7dfd366a75b"
+  },
+  {
+    "path": "assets/Myuuel - Standing - Idle Blink.png",
+    "bytes": 1445118,
+    "sha256": "8252a75b95c5492497dc6be27fab8a78515b28d62139ba5f821e1e4aae40bd42"
+  },
+  {
+    "path": "assets/Myuuel - Standing - Listening.png",
+    "bytes": 1402680,
+    "sha256": "cdc9381fa2097f298de1d0d1ee3bf8c42cfb466c654ac0ac22e2d5cbb930f072"
+  },
+  {
+    "path": "assets/Myuuel - Standing - Speaking and Explaining.png",
+    "bytes": 1467943,
+    "sha256": "11d9d85692ef6a4e6f0092b41375aaafc37c78633ab80d05044df8cb3503ee3b"
+  },
+  {
+    "path": "assets/Myuuel - Standing - Thinking.png",
+    "bytes": 1449423,
+    "sha256": "ad304e6890fb762feeb842adeba557c8a423ef17c8d3565bd9a9fbee84507f16"
+  },
+  {
+    "path": "example-data.js",
+    "bytes": 1927203,
+    "sha256": "07cb3a596f12c0f1c9c19fe3926729b22ae737de709d6476a534610cd7765a58"
+  },
+  {
+    "path": "example.html",
+    "bytes": 1447,
+    "sha256": "46b2c3038c05c0b58a2eb437abb40e329fe6bfde8d05a94d8c981b5f86691fe8"
+  },
+  {
+    "path": "example.js",
+    "bytes": 1813,
+    "sha256": "b61733843001edc771ec34b22289d0e89fccc1d6c40b673447134166208a8c48"
+  },
+  {
+    "path": "modules/myuuel-audio-motion.js",
+    "bytes": 1857,
+    "sha256": "5574eac4c0d4ffdb48a51355b881e3ef852e609491df39aeab09771b98cdfe93"
+  },
+  {
+    "path": "modules/myuuel-character.js",
+    "bytes": 4155,
+    "sha256": "06dc35d5cd3a791d642a1fa5bd04923f1da3012aa87b4e84d860fb1932056e56"
+  },
+  {
+    "path": "modules/myuuel-dress-wind.js",
+    "bytes": 2394,
+    "sha256": "2bac5a91c22f2422f81f17010d10dfc3e036459c60ec72308319f60b853b8e71"
+  },
+  {
+    "path": "modules/myuuel-smooth-motion.js",
+    "bytes": 10234,
+    "sha256": "3327172afeae452e1d9284b32a35194929ef063623d14519b0fd35cfee22ed99"
+  },
+  {
+    "path": "modules/myuuel-stage.js",
+    "bytes": 1224,
+    "sha256": "df7bcc89d15497b590e3d3241b0bbec6959ec39402958efa6e1609c1ed85401f"
+  },
+  {
+    "path": "optional-assets/Myuuel - Optional Bar Stool.png",
+    "bytes": 1451661,
+    "sha256": "c0e3d838c531a2d234f4ea953c5e38aaad0a2c9e0f0d88d56399a4ce39d01f7a"
+  },
+  {
+    "path": "optional-support.json",
+    "bytes": 273,
+    "sha256": "3d6d3c2fdd27e56a94f9e878d234eaedcdf9cf7b6dd63ca2b931cb850046505f"
+  },
+  {
+    "path": "provenance.json",
+    "bytes": 4032,
+    "sha256": "fc343a10aec4ae4c390684ccd98494a617714e837ec993ad98d4f282518c18dc"
+  },
+  {
+    "path": "README.md",
+    "bytes": 9153,
+    "sha256": "2a51182da524dff2bde11992620b76278e1f77fa3d1654f747730e6bb7d7f181"
+  },
+  {
+    "path": "rig/motion-registration.js",
+    "bytes": 849,
+    "sha256": "6bb3ce9e66ca7e5cd7a14648d5d738ee9421e44e3e0cadac669989611627313b"
+  },
+  {
+    "path": "rig/motion-registration.json",
+    "bytes": 3177,
+    "sha256": "c121669c6cd6234508b4d7c6ffd3affc45bd6e961fdf67fa8c2869580ce57b39"
+  },
+  {
+    "path": "rig/myuuel-motion-profiles.js",
+    "bytes": 993,
+    "sha256": "704ee8f8de87786b41a78bb9737fcb2ae17d4e36e486cf63d47d5959c75a9d12"
+  }
+]

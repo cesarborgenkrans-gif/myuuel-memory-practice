@@ -1,0 +1,386 @@
+[
+ {
+  "id": "01-idle-blink",
+  "label": "Idle Blink",
+  "posture": "Standing",
+  "image": "assets/Myuuel - Standing - Idle Blink.webp",
+  "sha256": "b3158133acea3a4a6abf4587f226e47b626c832fdc17c8f01c4adb13ea444d55",
+  "durations": [
+   1200,
+   220,
+   160,
+   110,
+   110,
+   180,
+   240,
+   500
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": true,
+  "sourceSha256": "8252a75b95c5492497dc6be27fab8a78515b28d62139ba5f821e1e4aae40bd42"
+ },
+ {
+  "id": "02-listening",
+  "label": "Listening",
+  "posture": "Standing",
+  "image": "assets/Myuuel - Standing - Listening.webp",
+  "sha256": "a1492b4872500df13c3609117e54569b5c180131596a64cc415db415034340a6",
+  "durations": [
+   500,
+   180,
+   200,
+   260,
+   260,
+   220,
+   200,
+   500
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": true,
+  "sourceSha256": "cdc9381fa2097f298de1d0d1ee3bf8c42cfb466c654ac0ac22e2d5cbb930f072"
+ },
+ {
+  "id": "03-speaking",
+  "label": "Speaking and Explaining",
+  "posture": "Standing",
+  "image": "assets/Myuuel - Standing - Speaking and Explaining.webp",
+  "sha256": "15463a8aed8b6434ad77264a9bbad145545004d06e52cfdd97a234801170846f",
+  "durations": [
+   260,
+   140,
+   150,
+   180,
+   150,
+   170,
+   180,
+   300
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": true,
+  "sourceSha256": "11d9d85692ef6a4e6f0092b41375aaafc37c78633ab80d05044df8cb3503ee3b"
+ },
+ {
+  "id": "04-thinking",
+  "label": "Thinking",
+  "posture": "Standing",
+  "image": "assets/Myuuel - Standing - Thinking.webp",
+  "sha256": "e86b325f32752df7ed18e045bfad205a686df83e56be6f47cb3d9113bd4cc608",
+  "durations": [
+   450,
+   200,
+   220,
+   400,
+   500,
+   220,
+   220,
+   450
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": true,
+  "sourceSha256": "ad304e6890fb762feeb842adeba557c8a423ef17c8d3565bd9a9fbee84507f16"
+ },
+ {
+  "id": "05-happy-wave",
+  "label": "Happy Wave",
+  "posture": "Standing",
+  "image": "assets/Myuuel - Standing - Happy Wave.webp",
+  "sha256": "727c7c93a0e8edb3f6b17b3430c1b44696632034b46d580d1c26c39126830f8a",
+  "durations": [
+   400,
+   160,
+   160,
+   190,
+   190,
+   180,
+   180,
+   450
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": true,
+  "sourceSha256": "9f074fb1738bd7280cf6da02487e66cc591943b96c29ce6d5304a7dfd366a75b"
+ },
+ {
+  "id": "06-edge-perch-clean",
+  "label": "Edge Perch",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Edge Perch.webp",
+  "sha256": "391e5a3a879f7a18fddbc049afea0bdb07e55070bedff82d4dbe0c50042016cd",
+  "durations": [
+   600,
+   200,
+   220,
+   250,
+   220,
+   220,
+   220,
+   600
+  ],
+  "anchor": [
+   192,
+   348
+  ],
+  "support": "stool",
+  "clothWind": false,
+  "sourceSha256": "4863dcd40392943a69a373217e0f8e41155080cc3d8e3c08225dd5d3a74f721b"
+ },
+ {
+  "id": "07-cross-legged-focus-clean",
+  "label": "Cross-Legged Focus",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Cross-Legged Focus.webp",
+  "sha256": "6ddbe1b75885b9f0a353919b3a201416516af38cf9cf5198e102699b4e1f54d6",
+  "durations": [
+   700,
+   200,
+   250,
+   350,
+   300,
+   220,
+   220,
+   600
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "0e482645a6fea97b45c06766004586fa2a09c7860b2ae75451ee4734e05959fe"
+ },
+ {
+  "id": "10-knees-hugged-rest",
+  "label": "Knees-Hugged Rest",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Knees-Hugged Rest.webp",
+  "sha256": "6d817218566790060d37a9441bc9e15701df39dbef11d126ff0e5ee9cf0d09f8",
+  "durations": [
+   650,
+   300,
+   350,
+   550,
+   650,
+   350,
+   300,
+   650
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "cec527bebb18ebb238331239c6392370ee95e594ff3aae420e4a08b15ae6124b"
+ },
+ {
+  "id": "11-seated-stretch-clean",
+  "label": "Stretch",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Stretch.webp",
+  "sha256": "87fa574ba033f2f213ed72949e6bec0ec48d47478a8ba67a0e673260f2722ef8",
+  "durations": [
+   600,
+   240,
+   260,
+   420,
+   420,
+   260,
+   240,
+   650
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "19ce04fc9e9f7d5b21992a3c045ffbd9d2b0cd07895ade87ed52c507751de3c4"
+ },
+ {
+  "id": "12-perch-ankles-crossed",
+  "label": "Edge Perch Ankles-Crossed Rest",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Edge Perch Ankles-Crossed Rest.webp",
+  "sha256": "716eae008bce51599624ba6aaf69b40a0c622f2476c60af8a6c19cfbd9813b5d",
+  "durations": [
+   700,
+   250,
+   250,
+   300,
+   300,
+   250,
+   250,
+   700
+  ],
+  "anchor": [
+   192,
+   348
+  ],
+  "support": "stool",
+  "clothWind": false,
+  "sourceSha256": "e37c431a6f021b0a189226381f685335e95dc39afe4fd88be5f8b19f2d8e596b"
+ },
+ {
+  "id": "13-perch-attentive-lean",
+  "label": "Edge Perch Attentive Lean",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Edge Perch Attentive Lean.webp",
+  "sha256": "ab047780c28c8b45ad2b34beb1df82bfad309f8d8853933bbc5f3f5ca8b005ae",
+  "durations": [
+   600,
+   220,
+   240,
+   350,
+   320,
+   240,
+   220,
+   600
+  ],
+  "anchor": [
+   192,
+   348
+  ],
+  "support": "stool",
+  "clothWind": false,
+  "sourceSha256": "fb02812dbdd290f0aea5710901409a7a2f67f34751eaa5a5c08f684aaa9fe1c8"
+ },
+ {
+  "id": "14-perch-small-wave",
+  "label": "Edge Perch Small Wave",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Edge Perch Small Wave.webp",
+  "sha256": "4cd894a44c4c7a8aabcf06a6eabd74e015a46afeaab75bc6c012a2c415a788aa",
+  "durations": [
+   550,
+   220,
+   240,
+   280,
+   280,
+   240,
+   220,
+   600
+  ],
+  "anchor": [
+   192,
+   348
+  ],
+  "support": "stool",
+  "clothWind": false,
+  "sourceSha256": "39ff0bb43c9d5156cefe91ae574abb917e82841ddde7d3d061981006abb8b6d3"
+ },
+ {
+  "id": "15-cross-legged-calm",
+  "label": "Cross-Legged Calm Breathing",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Cross-Legged Calm Breathing.webp",
+  "sha256": "30300cac7dcfcfe05afd346d53e6a8331a7bc6bbcb8a161e2fc48eb236418c6e",
+  "durations": [
+   800,
+   300,
+   350,
+   500,
+   500,
+   350,
+   300,
+   800
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "042ed88cd8c78b56ec5772cb2ecf48ae72b976273634f7f0c5009d7465231ee3"
+ },
+ {
+  "id": "16-cross-legged-thinking",
+  "label": "Cross-Legged Thinking",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Cross-Legged Thinking.webp",
+  "sha256": "19edb5b2068cc30c1a63d96fa9d9eb6f177205c65f7b197163416434d13e1827",
+  "durations": [
+   600,
+   240,
+   260,
+   450,
+   550,
+   260,
+   240,
+   650
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "8f9c989062b15616a0aaa2d17caa17c41c1fc71cf3cf5ed67a3d566f95434f6c"
+ },
+ {
+  "id": "17-cross-legged-dozing",
+  "label": "Cross-Legged Dozing",
+  "posture": "Sitting",
+  "image": "assets/Myuuel - Sitting - Cross-Legged Dozing.webp",
+  "sha256": "f81ef582617c46d9a54dececd147868b4ce9b6d9fe9d4bd62bacc433c0465757",
+  "durations": [
+   750,
+   350,
+   450,
+   700,
+   800,
+   450,
+   350,
+   750
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "0c3c6ba6665f826209200905fcc2fbce8beb41ccaaf2ef62abdf26906a45aa35"
+ },
+ {
+  "id": "08-kneeling-inspect",
+  "label": "Inspecting",
+  "posture": "Kneeling",
+  "image": "assets/Myuuel - Kneeling - Inspecting.webp",
+  "sha256": "524c7198735ee4f341005c98563c5b3154e83e01407f8f8af97be7e29c3ee766",
+  "durations": [
+   550,
+   220,
+   250,
+   350,
+   350,
+   250,
+   220,
+   550
+  ],
+  "anchor": [
+   192,
+   464
+  ],
+  "support": "platform",
+  "clothWind": false,
+  "sourceSha256": "137cc4dc474ad556ccbd3fae719851df95cbfdc6e91dec4814286986bf8adaa0"
+ }
+]

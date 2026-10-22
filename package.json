@@ -1,0 +1,72 @@
+{
+  "name": "myuuel-memory-practice",
+  "version": "0.1.0",
+  "description": "Memory training app for Windows: a calm, hands-free recall slideshow that practises remembering strong passwords with fictional combinations and real mnemonic techniques. By SparkleSnap.",
+  "private": true,
+  "author": {
+    "name": "Cezar Borgkrans (Cesar Borgenkrans)",
+    "url": "https://sparklesnap.dev/"
+  },
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "free": "electron . --free",
+    "dist:win": "electron-builder --win portable --x64"
+  },
+  "build": {
+    "appId": "dev.sparklesnap.myuuel-memory-practice",
+    "productName": "Myuuel Memory Practice",
+    "asar": true,
+    "directories": {
+      "output": "release-dist"
+    },
+    "files": [
+      "package.json",
+      "README.md",
+      "src/**/*",
+      "assets/brand/*",
+      "assets/cursors/*",
+      "assets/myuuel/motion-kit/approved-sheets.json",
+      "assets/myuuel/motion-kit/modules/*.js",
+      "assets/myuuel/motion-kit/rig/*.js",
+      "assets/myuuel/motion-kit/assets/*.webp",
+      "content/*.json"
+    ],
+    "win": {
+      "icon": "assets/brand/icon.ico",
+      "target": [
+        "portable"
+      ]
+    },
+    "artifactName": "Myuuel-Memory-Practice-Windows-x64.${ext}",
+    "copyright": "© 2026 SparkleSnap"
+  },
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3"
+  },
+  "contributors": [
+    "SparkleSnap"
+  ],
+  "homepage": "https://sparklesnap.dev/",
+  "keywords": [
+    "memory-training",
+    "brain-training",
+    "recall-practice",
+    "mnemonics",
+    "memory-techniques",
+    "password",
+    "password-memorization",
+    "learning",
+    "wellbeing",
+    "health",
+    "focus",
+    "side-screen",
+    "desktop-companion",
+    "mascot",
+    "electron",
+    "windows",
+    "sparklesnap"
+  ],
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,6 @@
+{
+  "image": "optional-assets/Myuuel - Optional Bar Stool.png",
+  "sha256": "c0e3d838c531a2d234f4ea953c5e38aaad0a2c9e0f0d88d56399a4ce39d01f7a",
+  "required": false,
+  "rendering": "MyuuelStage.draw supports showSupport:false; character never depends on furniture."
+}

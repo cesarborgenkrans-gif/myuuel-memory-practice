@@ -1,0 +1,52 @@
+{
+  "purpose": "Fictional design content only; never use these strings as real credentials",
+  "selected_mode": null,
+  "recommended_first_mode": "quiet-recall",
+  "cards": [
+    {
+      "id": "fictional-demo-1",
+      "label": "Fictional example",
+      "display_value": "Example-Lantern-47!",
+      "real_credential": false
+    }
+  ],
+  "proposed_presets_seconds": {
+    "comfortable": {
+      "look": 8,
+      "recall": 12,
+      "check": 5,
+      "rest": 5
+    },
+    "slow": {
+      "look": 12,
+      "recall": 20,
+      "check": 8,
+      "rest": 10
+    }
+  },
+  "proposed_defaults": {
+    "auto_start_real_material": false,
+    "typing_required": false,
+    "items_per_session": 1,
+    "persist_session_values": false,
+    "audio": false,
+    "network": false
+  },
+  "recommended_companion_mode": "fading-lantern",
+  "proposed_fading_lantern_presets_seconds": {
+    "comfortable": {
+      "recall": 12,
+      "rest": 5,
+      "check": 5,
+      "fade": 4,
+      "look": 4
+    },
+    "slow": {
+      "recall": 20,
+      "rest": 10,
+      "check": 8,
+      "fade": 6,
+      "look": 6
+    }
+  }
+}

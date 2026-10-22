@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; media-src 'self'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Cezar Borgkrans (Cesar Borgenkrans) — SparkleSnap">
+<!-- Myuuel Memory Practice · made by Cezar Borgkrans, also written Cesar Borgenkrans, for SparkleSnap -->
+<title>Myuuel Memory Practice</title>
+<link rel="icon" href="../../assets/brand/icon-256.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="intro" data-cursor="128" data-theme="lantern">
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-logo" src="../../assets/brand/sparklesnap-watermark-v1-web.webp" alt="SparkleSnap">
+      <div class="brand-words"><span class="brand-name">Myuuel</span><span class="brand-sub">Memory Practice</span></div>
+    </div>
+    <div class="top-actions">
+      <button id="btn-view" class="icon win" type="button" title="Window placement" aria-label="Window placement" aria-expanded="false">▣</button>
+      <button id="btn-pin" class="icon win" type="button" data-toggle title="Keep on top" aria-label="Keep on top" aria-pressed="false">◇</button>
+      <button id="btn-settings" class="icon" type="button" title="Settings" aria-label="Settings" aria-expanded="false">⚙</button>
+      <button id="btn-min" class="icon win" type="button" title="Minimize" aria-label="Minimize">−</button>
+      <button id="btn-max" class="icon win free-only" type="button" title="Maximize" aria-label="Maximize">□</button>
+      <button id="btn-close" class="icon win close" type="button" title="Close" aria-label="Close">×</button>
+    </div>
+  </header>
+
+  <section class="band" aria-label="Myuuel">
+    <div class="rig" id="rig">
+      <div class="figure" id="figure">
+        <canvas id="actor-a" class="actor" aria-hidden="true"></canvas>
+        <canvas id="actor-b" class="actor" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <div id="bubble" class="bubble" role="status" hidden></div>
+  </section>
+
+  <main class="practice" id="practice">
+    <div class="phase-row">
+      <span class="phase-name" id="phase-name">Hello</span>
+      <span class="phase-cue" id="phase-cue"></span>
+      <span class="deck" id="deck" aria-hidden="true"></span>
+    </div>
+    <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+    <div class="method" id="method"><span class="method-name" id="method-name"></span><span class="method-hint" id="method-hint"></span></div>
+    <div class="stage-text" id="stage-text">
+      <div class="combo" id="combo" aria-label="Practice combination"></div>
+      <div class="prompt" id="prompt"><span class="prompt-star" id="prompt-star">✦</span><span class="prompt-text" id="prompt-text"></span></div>
+    </div>
+    <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+    <div class="check-actions" id="check-actions" hidden>
+      <button id="btn-again" type="button" data-verdict="again">↺ Again</button>
+      <button id="btn-comfy" type="button" data-verdict="comfortable">✓ Comfortable</button>
+    </div>
+  </main>
+
+  <footer class="controls">
+    <button id="btn-pause" class="pause" type="button" data-toggle aria-pressed="false"><span class="glyph">❚❚</span><span class="label">Pause</span></button>
+    <div class="modes" role="group" aria-label="Practice mode">
+      <button type="button" data-mode="quiet" aria-pressed="true">Quiet Recall</button>
+      <button type="button" data-mode="lantern" aria-pressed="false">Fading Lantern</button>
+    </div>
+  </footer>
+</div>
+
+<div class="veil" id="view-menu" hidden>
+  <section class="sheet small" aria-label="Window placement">
+    <header class="sheet-head"><strong>Window</strong><button class="icon" type="button" data-close>×</button></header>
+    <div class="choice-list">
+      <button type="button" data-place="side"><b>Side screen</b><small>Fill the small side display</small></button>
+      <button type="button" data-place="main"><b>Main monitor</b><small>A tall strip at the right edge</small></button>
+      <button type="button" data-place="free"><b>Free form</b><small>Move and resize it yourself</small></button>
+    </div>
+    <div class="switch-row"><span>Keep on top of other windows</span><button type="button" id="pin-row" class="seg-one" data-toggle aria-pressed="false">Off</button></div>
+  </section>
+</div>
+
+<div class="veil" id="settings" hidden>
+  <section class="sheet" aria-label="Settings">
+    <header class="sheet-head"><strong>Settings</strong><button class="icon" type="button" data-close>×</button></header>
+    <div class="setting"><span>Theme</span><div class="seg" data-setting="theme"><button data-value="lantern">Lantern Night</button><button data-value="type">Living Type</button></div></div>
+    <div class="setting"><span>Speed</span><div class="seg" data-setting="speed"><button data-value="comfortable">Comfortable</button><button data-value="slow">Slow</button></div></div>
+    <div class="setting"><span>Difficulty</span><div class="seg" data-setting="level"><button data-value="gentle">Gentle</button><button data-value="standard">Standard</button><button data-value="tough">Tough</button></div></div>
+    <div class="setting"><span>Combinations</span><div class="seg" data-setting="style"><button data-value="mix">Mix</button><button data-value="random">Random</button><button data-value="methods">Methods</button></div></div>
+    <div class="setting"><span>Self-check buttons</span><div class="seg" data-setting="selfCheck"><button data-value="true">On</button><button data-value="false">Off</button></div></div>
+    <div class="setting"><span>Click sounds</span><div class="seg" data-setting="sound"><button data-value="true">On</button><button data-value="false">Off</button></div></div>
+    <div class="setting"><span>Cursor</span><div class="seg" data-setting="cursor"><button data-value="128">Large</button><button data-value="96">Medium</button></div></div>
+    <button type="button" class="wide" id="btn-new-deck">✦ New set of combinations</button>
+    <p class="fine">Every combination is invented on this computer and kept only in memory. They are practice material — keep your real passwords in a password manager.</p>
+    <p class="fine version" id="version"></p>
+    <p class="fine sign"><button type="button" class="site-link" id="site-link" title="sparklesnap.dev">SparkleSnap</button> · Myuuel Memory Practice</p>
+  </section>
+</div>
+
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-dress-wind.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-smooth-motion.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-audio-motion.js"></script>
+<script src="../../assets/myuuel/motion-kit/rig/motion-registration.js"></script>
+<script src="../../assets/myuuel/motion-kit/rig/myuuel-motion-profiles.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-character.js"></script>
+<script src="combos.js"></script>
+<script src="practice.js"></script>
+<script src="scene.js"></script>
+<script src="scene-type.js"></script>
+<script src="sound.js"></script>
+<script src="confetti.js"></script>
+<script src="seated-registration.js"></script>
+<script src="myuuel.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

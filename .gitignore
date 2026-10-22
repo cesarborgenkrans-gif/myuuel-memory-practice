@@ -1,0 +1,12 @@
+node_modules/
+release-dist/
+*.log
+
+# Local only — never published
+*.lnk
+AGENTS.md
+asset-provenance.json
+reference/
+docs/*.md
+assets/myuuel/approved/
+assets/myuuel/motion-kit/example*

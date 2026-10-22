@@ -1,0 +1,24 @@
+name: 🐞 Something isn't working
+description: Report a bug or a visual glitch.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw. A screenshot helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: setup
+    attributes:
+      label: Windows version and screen setup
+      placeholder: "Windows 11, 1440×2560 side screen at 150% scaling"
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: "0.1.0"
+  - type: markdown
+    attributes:
+      value: "Please never paste a real password — the app only ever shows fictional combinations."
