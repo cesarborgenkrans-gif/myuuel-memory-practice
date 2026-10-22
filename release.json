@@ -1,0 +1,29 @@
+{
+  "product": "myuuel-memory-practice",
+  "route": "myuuel-memory-practice",
+  "entry": "myuuel-memory-practice.html",
+  "note": "The live teaser behind Myuuel's card in SparkleSnap's Interactive Studio. tools/export-release.mjs copies these files into release/dist/; the portal imports that folder with npm run products:import.",
+  "files": {
+    "myuuel-memory-practice.html": "web/myuuel-memory-practice.html",
+    "fonts/cascadia-mono-latin-400-normal.woff2": "web/fonts/cascadia-mono-latin-400-normal.woff2",
+    "fonts/cascadia-mono-latin-600-normal.woff2": "web/fonts/cascadia-mono-latin-600-normal.woff2",
+    "fonts/OFL-cascadia-mono.txt": "web/fonts/OFL-cascadia-mono.txt",
+    "js/seated-registration.js": "src/renderer/seated-registration.js",
+    "js/scene-type.js": "src/renderer/scene-type.js",
+    "js/combos.js": "src/renderer/combos.js",
+    "js/practice.js": "src/renderer/practice.js",
+    "js/confetti.js": "src/renderer/confetti.js",
+    "js/sound.js": "src/renderer/sound.js",
+    "kit/modules/myuuel-dress-wind.js": "assets/myuuel/motion-kit/modules/myuuel-dress-wind.js",
+    "kit/modules/myuuel-smooth-motion.js": "assets/myuuel/motion-kit/modules/myuuel-smooth-motion.js",
+    "kit/modules/myuuel-audio-motion.js": "assets/myuuel/motion-kit/modules/myuuel-audio-motion.js",
+    "kit/modules/myuuel-character.js": "assets/myuuel/motion-kit/modules/myuuel-character.js",
+    "kit/rig/motion-registration.js": "assets/myuuel/motion-kit/rig/motion-registration.js",
+    "kit/rig/myuuel-motion-profiles.js": "assets/myuuel/motion-kit/rig/myuuel-motion-profiles.js",
+    "art/sparklesnap-watermark-v1-web.webp": "assets/brand/sparklesnap-watermark-v1-web.webp",
+    "art/cursor-96.svg": "assets/cursors/cursor-96.svg",
+    "art/cursor-active-96.svg": "assets/cursors/cursor-active-96.svg",
+    "CHARACTER-GUIDELINES.md": "CHARACTER-GUIDELINES.md"
+  },
+  "sheets": ["15-cross-legged-calm"]
+}
