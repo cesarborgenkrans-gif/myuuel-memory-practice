@@ -26,7 +26,7 @@
 - **Recall practice, hands-free.** A combination appears, fades, waits while you rebuild it in your head, then comes back so you can compare. No typing, no scores, no streaks.
 - **Real memory techniques.** Every combination is built with a mnemonic method — sentence initials, hidden words, rhymes, number stories — so you learn the technique, not just the string.
 - **Made for a small vertical side screen.** The text is deliberately huge so you can read it from the corner of your eye on a little portrait display. It works on any monitor too.
-- **A companion, not a dashboard.** Myuuel keeps you company: cross-legged and relaxed on Gentle and Standard, standing alert on Tough. She breathes, reacts when you poke her, curls up when you pause and, if you leave her long enough, dozes off.
+- **A companion, not a dashboard.** Myuuel keeps you company: She breathes, reacts when you poke her, curls up when the app is paused and, if you leave her long enough, dozes off.
 
 ## How a round works
 
@@ -101,15 +101,13 @@ Ideas, bugs, a memory method you love? [**Open an issue**](../../issues/new/choo
 
 ## Licence — what you can do
 
-**Short version: the code is yours to use, and Myuuel is yours to love, as long as you credit her home.**
+**Short version: the code is yours to use, and Myuuel is yours to adore and draw or remix, as long as you credit her home.**
 
 | | Licence | In short |
 |---|---|---|
 | 💻 **Code** — `src/`, `tools/`, start scripts | [MIT](LICENSE) | Clone, learn from, modify, fork and share it freely. Keep the copyright notice. |
 | 🌸 **Myuuel** — her design, art and animation (`assets/myuuel/`, `docs/media/`) | [Character guidelines](CHARACTER-GUIDELINES.md) | Free for fan works, forks and non-commercial projects with credit — *Myuuel © SparkleSnap — sparklesnap.dev*. Keep her kind, make clear it's fan-made, and ask before selling anything with her on it. |
 | ✨ **SparkleSnap name and logos** (`assets/brand/`) | Not licensed | Use them only to credit or link back. A fork uses its own name and mark. |
-
-Myuuel is shared in the spirit of characters like Hatsune Miku and the Touhou cast: made to be drawn, remixed and enjoyed by others, with a clear home.
 
 ### Good to know
 
