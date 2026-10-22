@@ -1,0 +1,17 @@
+/* The Windows fonts the app asks for, mapped to the real font files (copied from the maker's own PC, used only to
+   render this film; Microsoft's fonts are not redistributed with it). Symbols the text fonts lack fall back to
+   Segoe UI Symbol, as they do on Windows. Served from /film-fonts/ by capture.py. */
+@font-face { font-family:"Segoe UI Variable Display"; src:url("/film-fonts/SegUIVar.ttf"); font-weight:300 700; }
+@font-face { font-family:"Segoe UI Variable Display"; src:url("/film-fonts/seguisym.ttf"); unicode-range:U+2190-21FF, U+2300-23FF, U+25A0-27BF, U+2B00-2BFF; }
+@font-face { font-family:"Georgia"; src:url("/film-fonts/georgia.ttf"); font-weight:400; font-style:normal; }
+@font-face { font-family:"Georgia"; src:url("/film-fonts/georgiab.ttf"); font-weight:700; font-style:normal; }
+@font-face { font-family:"Georgia"; src:url("/film-fonts/georgiai.ttf"); font-weight:400; font-style:italic; }
+@font-face { font-family:"Georgia"; src:url("/film-fonts/georgiaz.ttf"); font-weight:700; font-style:italic; }
+@font-face { font-family:"Georgia"; src:url("/film-fonts/seguisym.ttf"); unicode-range:U+2190-21FF, U+2300-23FF, U+25A0-27BF, U+2B00-2BFF; }
+@font-face { font-family:"Cascadia Mono"; src:url("/film-fonts/CascadiaMono.ttf"); font-weight:200 700; }
+@font-face { font-family:"Consolas"; src:url("/film-fonts/consola.ttf"); font-weight:400; }
+@font-face { font-family:"Consolas"; src:url("/film-fonts/consolab.ttf"); font-weight:700; }
+@font-face { font-family:"Noto Serif JP"; src:url("/film-fonts/NotoSerifJP-VF.ttf"); font-weight:200 900; }
+@font-face { font-family:"Noto Serif JP"; src:url("/film-fonts/seguisym.ttf"); unicode-range:U+2190-21FF, U+2300-23FF, U+25A0-27BF, U+2B00-2BFF; }
+/* "Segoe UI Variable Display" is the variable font at its display optical size. */
+body { font-variation-settings:"opsz" 36; }

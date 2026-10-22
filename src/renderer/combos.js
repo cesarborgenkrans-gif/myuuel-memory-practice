@@ -25,7 +25,7 @@
     while (out.length < n) out.push(pick(all));
     const value = shuffle(out).join(''), size = n > 12 ? 5 : 4, chunks = [];
     for (let i = 0; i < value.length; i += size) chunks.push(value.slice(i, i + size));
-    return { value, method: 'random', hint: 'Chunk it: ' + chunks.join('  ·  ') };
+    return { value, core: value, method: 'random', hint: 'Chunk it: ' + chunks.join('  ·  ') };
   }
 
   /* ── Sentence initials: a tiny story, keep the first letters ── */
@@ -45,7 +45,7 @@
     }
     sentence = cap(sentence) + end; value = cap(value) + end;
     const rule = level === 'tough' ? 'first letters, numbers stay, “at” becomes @' : 'first letters, numbers stay, so does the ending';
-    return { value, method: 'initials', hint: `“${sentence}” — ${rule}` };
+    return { value, core: noun + '|' + place, method: 'initials', hint: `“${sentence}” — ${rule}` };
   }
 
   /* ── Hidden word: a word woven with a small repeating pattern ── */
@@ -61,7 +61,7 @@
     let value = '';
     letters.forEach((c, i) => { value += c; if (i < letters.length - 1) value += filler[i % filler.length]; });
     const caps = level === 'tough' ? ', every other letter a capital' : '';
-    return { value, method: 'hidden', hint: `The word ${word.toUpperCase()} hides in it, with ${filler.join(' ')} repeating between its letters${caps}.` };
+    return { value, core: word, method: 'hidden', hint: `The word ${word.toUpperCase()} hides in it, with ${filler.join(' ')} repeating between its letters${caps}.` };
   }
 
   /* ── Mirror word: read a word backwards ── */
@@ -70,11 +70,11 @@
   const mirror = w => [...cap(w)].reverse().join('');
   function mirrored(level) {
     const a = pick(MIRROR);
-    if (level === 'gentle') { const d = digit() + digit(); return { value: mirror(a) + d, method: 'mirror', hint: `${a.toUpperCase()} seen in a mirror (its capital ends up last), then ${d}.` }; }
+    if (level === 'gentle') { const d = digit() + digit(); return { value: mirror(a) + d, core: a, method: 'mirror', hint: `${a.toUpperCase()} seen in a mirror (its capital ends up last), then ${d}.` }; }
     const s = pick(SYMBOLS), d = digit();
-    if (level === 'standard') { const b = pick(PAIR); return { value: mirror(a) + s + cap(b) + d, method: 'mirror', hint: `${a.toUpperCase()} in a mirror, ${sym(s)}, then ${cap(b)} and ${d}.` }; }
+    if (level === 'standard') { const b = pick(PAIR); return { value: mirror(a) + s + cap(b) + d, core: a, method: 'mirror', hint: `${a.toUpperCase()} in a mirror, ${sym(s)}, then ${cap(b)} and ${d}.` }; }
     const b = pick(MIRROR.filter(x => x !== a)), d2 = digit();
-    return { value: mirror(a) + s + mirror(b) + d + d2, method: 'mirror', hint: `${a.toUpperCase()} and ${b.toUpperCase()}, both in a mirror, joined by ${sym(s)}, then ${d}${d2}.` };
+    return { value: mirror(a) + s + mirror(b) + d + d2, core: a, method: 'mirror', hint: `${a.toUpperCase()} and ${b.toUpperCase()}, both in a mirror, joined by ${sym(s)}, then ${d}${d2}.` };
   }
 
   /* ── Number story: a scene with a time in it ── */
@@ -84,11 +84,11 @@
     ['Sailor', 'Dock', 'The sailor ties up at the dock at'], ['Puppy', 'Park', 'The puppy runs to the park at'], ['Star', 'Lake', 'The first star shows over the lake at'], ['Tram', 'Corner', 'The tram turns the corner at'], ['Crow', 'Chimney', 'The crow sits on the chimney at'], ['Kettle', 'Kitchen', 'The kettle sings in the kitchen at'], ['Swan', 'Canal', 'The swan glides down the canal at'], ['Band', 'Stage', 'The band takes the stage at'], ['Fog', 'Harbor', 'The fog rolls into the harbor at'], ['Bat', 'Barn', 'The bat leaves the barn at']];
   function story(level) {
     const [a, b, line] = pick(SCENES), h = rnd(24), m = pick([5, 10, 15, 20, 30, 40, 45, 50, 55]), end = pick('!?.');
-    if (level === 'gentle') return { value: a + pad2(h) + b + end, method: 'story', hint: `${line} ${pad2(h)}:00${end} — ${a}, the hour, ${b}, the ending.` };
+    if (level === 'gentle') return { value: a + pad2(h) + b + end, core: a + b, method: 'story', hint: `${line} ${pad2(h)}:00${end} — ${a}, the hour, ${b}, the ending.` };
     const time = pad2(h) + pad2(m), spoken = `${pad2(h)}:${pad2(m)}`;
-    if (level === 'standard') return { value: a + time + b + end, method: 'story', hint: `${line} ${spoken}${end} — ${a}, the time, ${b}, and the ending.` };
+    if (level === 'standard') return { value: a + time + b + end, core: a + b, method: 'story', hint: `${line} ${spoken}${end} — ${a}, the time, ${b}, and the ending.` };
     const s = pick(SYMBOLS);
-    return { value: a + time + s + b + end, method: 'story', hint: `${line} ${spoken}${end} — ${a}, the time, ${sym(s)}, ${b}, the ending.` };
+    return { value: a + time + s + b + end, core: a + b, method: 'story', hint: `${line} ${spoken}${end} — ${a}, the time, ${sym(s)}, ${b}, the ending.` };
   }
 
   /* ── Look-alike swap: letters that look like numbers ── */
@@ -100,7 +100,7 @@
     const tail = level === 'gentle' ? digit() + pick(SYMBOLS) : level === 'tough' ? pick(SYMBOLS) : '';
     const value = words.map(swapWord).join('-') + tail;
     const used = [...new Set(words.join('').match(/[aeios]/g) || [])].map(c => `${c}→${SWAPS[c]}`).join(', ');
-    return { value, method: 'swap', hint: `${words.map(w => w.toUpperCase()).join(' · ')} with look-alikes: ${used}${tail ? `, then ${tail.split('').join(' ')}` : ''}. A well-known trick — strongest mixed with others.` };
+    return { value, core: words[0], method: 'swap', hint: `${words.map(w => w.toUpperCase()).join(' · ')} with look-alikes: ${used}${tail ? `, then ${tail.split('').join(' ')}` : ''}. A well-known trick — strongest mixed with others.` };
   }
 
   /* ── Rhyme chain ── */
@@ -108,22 +108,22 @@
     ['cake', 'lake', 'snake', 'rake'], ['goat', 'boat', 'coat', 'note'], ['bear', 'chair', 'pear', 'stair'], ['king', 'ring', 'wing', 'swing'], ['house', 'mouse', 'blouse'], ['bug', 'mug', 'rug', 'hug'], ['clock', 'sock', 'rock', 'dock'], ['fish', 'dish', 'wish'], ['hen', 'pen', 'ten', 'den'], ['mail', 'snail', 'tail', 'pail'],
     ['cloud', 'crowd', 'loud', 'proud'], ['nest', 'vest', 'chest', 'west'], ['frown', 'crown', 'town', 'gown'], ['beach', 'peach', 'reach'], ['bone', 'cone', 'phone', 'stone'], ['cheese', 'bees', 'keys', 'trees'], ['honey', 'bunny', 'money', 'sunny'], ['candle', 'handle', 'sandal']];
   function rhyme(level) {
-    const words = pickDistinct(pick(RHYMES), level === 'gentle' ? 2 : 3), d1 = digit(), d2 = digit();
-    if (level === 'gentle') return { value: words.map(cap).join('') + d1 + d2, method: 'rhyme', hint: `A rhyme: ${words.join(', ')} — then ${d1}${d2}.` };
+    const group = pick(RHYMES), words = pickDistinct(group, level === 'gentle' ? 2 : 3), d1 = digit(), d2 = digit();
+    if (level === 'gentle') return { value: words.map(cap).join('') + d1 + d2, core: group[0], method: 'rhyme', hint: `A rhyme: ${words.join(', ')} — then ${d1}${d2}.` };
     const s = pick(SYMBOLS);
-    if (level === 'standard') return { value: cap(words[0]) + s + cap(words[1]) + cap(words[2]) + d1 + d2, method: 'rhyme', hint: `A rhyme: ${words[0]} ${s} ${words[1]}, ${words[2]} — then ${d1}${d2}.` };
+    if (level === 'standard') return { value: cap(words[0]) + s + cap(words[1]) + cap(words[2]) + d1 + d2, core: group[0], method: 'rhyme', hint: `A rhyme: ${words[0]} ${s} ${words[1]}, ${words[2]} — then ${d1}${d2}.` };
     const s2 = pick(SYMBOLS);
-    return { value: cap(words[0]) + s + words[1].toUpperCase() + s2 + cap(words[2]) + d1 + d2, method: 'rhyme', hint: `A rhyme: ${words[0]} ${s} ${words[1].toUpperCase()} (shouted) ${s2} ${words[2]} — then ${d1}${d2}.` };
+    return { value: cap(words[0]) + s + words[1].toUpperCase() + s2 + cap(words[2]) + d1 + d2, core: group[0], method: 'rhyme', hint: `A rhyme: ${words[0]} ${s} ${words[1].toUpperCase()} (shouted) ${s2} ${words[2]} — then ${d1}${d2}.` };
   }
 
   /* ── Picture words: images and a number ── */
   const PICTURES = 'amber anchor apple arrow aspen badger basil beacon berry birch bloom bramble breeze brook cactus candle canyon cedar cherry cinder clover cobalt comet copper coral cotton crane crystal daisy dawn delta dune echo ember fable falcon fern fjord flint fox frost garnet ginger glacier harbor hazel heron honey indigo iris ivory jasper juniper kettle kiwi lagoon lantern lark lemon lilac lotus maple marble meadow mint moss nectar nova oak ocean olive onyx orbit otter pebble pepper pine plum poppy prism quartz quill raven reef ripple river robin saffron sage shell silver sparrow spruce stone thistle thunder tide topaz tulip velvet violet walnut willow wren'.split(' ');
   function picture(level) {
     const [a, b, c] = pickDistinct(PICTURES, 3), s = pick(SYMBOLS), d = digit() + digit();
-    if (level === 'gentle') return { value: cap(a) + d + s, method: 'picture', hint: `Picture ${an(a.toUpperCase())}, then ${d}, then ${sym(s)}.` };
-    if (level === 'standard') return { value: cap(a) + s + cap(b) + d, method: 'picture', hint: `Picture ${an(a.toUpperCase())} beside ${an(b.toUpperCase())}, joined by ${sym(s)}; then ${d}.` };
+    if (level === 'gentle') return { value: cap(a) + d + s, core: a, method: 'picture', hint: `Picture ${an(a.toUpperCase())}, then ${d}, then ${sym(s)}.` };
+    if (level === 'standard') return { value: cap(a) + s + cap(b) + d, core: a, method: 'picture', hint: `Picture ${an(a.toUpperCase())} beside ${an(b.toUpperCase())}, joined by ${sym(s)}; then ${d}.` };
     const sep = pick('-.+_');
-    return { value: [cap(a), b, cap(c)].join(sep) + d + s, method: 'picture', hint: `Picture ${a.toUpperCase()}, a small ${b}, ${c.toUpperCase()} — joined by ${({ '-': 'dashes', '.': 'dots', '+': 'pluses', '_': 'underscores' })[sep]}; then ${d} and ${s}.` };
+    return { value: [cap(a), b, cap(c)].join(sep) + d + s, core: a, method: 'picture', hint: `Picture ${a.toUpperCase()}, a small ${b}, ${c.toUpperCase()} — joined by ${({ '-': 'dashes', '.': 'dots', '+': 'pluses', '_': 'underscores' })[sep]}; then ${d} and ${s}.` };
   }
 
   const METHODS = {
@@ -140,14 +140,23 @@
   const normaliseStyle = s => s === 'characters' ? 'random' : s === 'words' ? 'methods' : ['mix', 'random', 'methods'].includes(s) ? s : 'mix';
   const normaliseLevel = l => RANDOM_LEN[l] ? l : 'standard';
 
+  /* Recently used cores (the word, scene or rhyme a combination is built on), per method, kept in memory only for this
+     session. Without this a new combination could reuse a word that just retired (PEARL again, with other numbers),
+     which feels like a repeat even though the string is new. 15 per method is about an hour of practice in Mix. */
+  const RECENT = {}, RECENT_SIZE = 15;
+  const seen = (key, core) => (RECENT[key] || []).includes(core);
+  function remember(key, core) { const list = RECENT[key] || (RECENT[key] = []); list.push(core); if (list.length > RECENT_SIZE) list.shift(); }
+
   /** style: 'mix' | 'random' | 'methods'. Mix is about a third random strings, the rest spread over the methods. */
   function make(style = 'mix', level = 'standard', avoid = [], recentMethods = []) {
     style = normaliseStyle(style); level = normaliseLevel(level);
-    for (let tries = 0; tries < 30; tries++) {
+    for (let tries = 0; tries < 40; tries++) {
       const key = style === 'random' ? 'random' : style === 'methods' ? pick(STORY_METHODS) : (rnd(3) === 0 ? 'random' : pick(STORY_METHODS));
       if (key !== 'random' && recentMethods.includes(key) && tries < 10) continue; // vary the methods within a set
       const made = METHODS[key].make(level);
       if (!made.value || /\s/.test(made.value) || avoid.includes(made.value)) continue;
+      if (tries < 36 && seen(key, made.core)) continue; // a fresh word or scene, not one that just retired
+      remember(key, made.core);
       return { ...made, methodName: METHODS[key].name, recall: METHODS[key].recall, seed: rnd(2 ** 31) };
     }
     const made = random(level);

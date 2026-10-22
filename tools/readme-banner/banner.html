@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Cezar Borgkrans (Cesar Borgenkrans) — SparkleSnap">
+<title>Myuuel Memory Practice — README banner</title>
+<!-- The animated README banner, 1280 x 640: the app's own Living Type painter (wire sphere, drifting letters) and the
+     motion kit's cross-legged Thinking phrase. Recorded frame by frame by tools/readme-banner/record.py.
+     ?layer=bg (background and text) · ?layer=fg (Myuuel only, transparent) · no parameter: everything, live. -->
+<style>
+  html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; background: #090b12; }
+  html.fg, html.fg body { background: transparent; }
+  #scene { position: absolute; left: 0; top: 0; width: 1280px; height: 1600px; filter: brightness(1.3) contrast(1.08) saturate(1.1); } /* the sphere has to read at README size */
+  #me { position: absolute; left: 770px; top: 18px; width: 480px; height: 640px; }
+  .txt { position: absolute; left: 0; top: 0; width: 1280px; height: 640px; }
+  .logo { position: absolute; left: 72px; top: 52px; width: 210px; }
+  .name { position: absolute; left: 70px; top: 128px; font: 400 96px/1.2 Georgia, serif; color: rgb(243, 205, 134); margin: 0; }
+  .sub { position: absolute; left: 76px; top: 250px; font: 600 26px/1.2 "Segoe UI Variable Display", "Segoe UI", sans-serif; letter-spacing: .02em; word-spacing: .3em; color: rgb(203, 187, 216); }
+  .tag { position: absolute; left: 76px; top: 297px; font: italic 400 25px/1.2 Georgia, serif; color: rgb(236, 224, 246); }
+  .card { position: absolute; left: 70px; top: 368px; width: 630px; height: 204px; box-sizing: border-box; border-radius: 22px;
+          background: rgba(30, 20, 42, .84); border: 2px solid rgba(232, 180, 90, .35); }
+  .look { position: absolute; left: 98px; top: 384px; font: 600 20px/1.2 "Segoe UI Variable Display", "Segoe UI", sans-serif; color: rgb(243, 205, 134); }
+  .method { position: absolute; left: 170px; top: 387px; font: 600 16px/1.2 "Segoe UI Variable Display", "Segoe UI", sans-serif; color: rgb(189, 145, 231); }
+  .combo { position: absolute; left: 98px; top: 410px; font: 400 72px/1.2 "Cascadia Mono", Consolas, monospace; color: rgb(251, 243, 228); white-space: pre; }
+  .combo .d { color: rgb(212, 184, 246); } .combo .s { color: rgb(244, 201, 119); }
+  .quote { position: absolute; left: 100px; top: 518px; font: italic 400 22px/1.2 Georgia, serif; color: rgb(203, 187, 216); }
+  body.bg #me, body.fg #scene, body.fg .txt { display: none; }
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="txt">
+  <img class="logo" src="../../assets/brand/sparklesnap-watermark-v1-web.webp" alt="SparkleSnap">
+  <p class="name">Myuuel</p>
+  <div class="sub">MEMORY PRACTICE</div>
+  <div class="tag">Glance. Recall. Remember — with fictional passwords only.</div>
+  <div class="card"></div>
+  <div class="look">LOOK</div>
+  <div class="method">SENTENCE INITIALS</div>
+  <div class="combo">O<span class="d">5</span>prgatg<span class="s">!</span></div>
+  <div class="quote">“Our 5 proud rabbits glowed around the garden!”</div>
+</div>
+<canvas id="me" aria-hidden="true"></canvas>
+
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-dress-wind.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-smooth-motion.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-audio-motion.js"></script>
+<script src="../../assets/myuuel/motion-kit/rig/motion-registration.js"></script>
+<script src="../../assets/myuuel/motion-kit/rig/myuuel-motion-profiles.js"></script>
+<script src="../../assets/myuuel/motion-kit/modules/myuuel-character.js"></script>
+<script src="../../src/renderer/seated-registration.js"></script>
+<script>
+  // The Living Type painter sizes itself from the window like the app's 9:16 screen does. Here it paints a tall
+  // 1280 x 1600 field (the banner shows its top 640 px) at full resolution, so the sphere's characters stay crisp.
+  Object.defineProperty(window, 'innerWidth', { get: () => 1280 });
+  Object.defineProperty(window, 'innerHeight', { get: () => 1600 });
+  Object.defineProperty(window, 'devicePixelRatio', { get: () => 1 / .7 });
+</script>
+<script src="../../src/renderer/scene-type.js"></script>
+<script>
+(async () => {
+  const layer = new URLSearchParams(location.search).get('layer');
+  if (layer) { document.documentElement.classList.add(layer); document.body.classList.add(layer); }
+  const LOOP = 6000;                                  // the banner loops every 6 s
+  const ID = '16-cross-legged-thinking';
+  const KIT = '../../assets/myuuel/motion-kit/';
+
+  // Background: the app's Living Type scene, the sphere centred behind her.
+  const scene = MyuuelTypeScene.create(document.getElementById('scene'));
+  const floorY = 598, bandH = 360;
+  scene.resize({ cx: 1010, floorY, bandTop: floorY - bandH, bandH, panel: { left: 70, right: 700, top: 368, bottom: 572 } });
+  scene.setMood('look');
+
+  // Myuuel: the approved cross-legged Thinking sheet (the original PNG when it is present, else the kit's WebP copy).
+  const sheets = await (await fetch(KIT + 'approved-sheets.json')).json();
+  const sheet = sheets.find(s => s.id === ID);
+  const load = src => new Promise((ok, no) => { const im = new Image(); im.onload = () => ok(im); im.onerror = no; im.src = src; });
+  let image;
+  try { image = await load('../../assets/myuuel/approved/' + encodeURIComponent('Myuuel - Sitting - Cross-Legged Thinking.png')); }
+  catch { image = await load(KIT + sheet.image.split('/').map(encodeURIComponent).join('/')); }
+  // Her thinking phrase at the app's timing (authored durations x 1.15), resting on the first drawing for the rest of
+  // the loop, so the whole loop is exactly 6 s.
+  const phrase = sheet.durations.map((ms, i) => [i, Math.round(ms * 1.15)]);
+  phrase[0][1] += LOOP - phrase.reduce((s, b) => s + b[1], 0);
+  const registration = { ...(window.MyuuelRegistration || {}), ...(window.MyuuelSeatedRegistration || {}) };
+  const me = MyuuelCharacter.create(document.getElementById('me'), { registration, profiles: { [ID]: { beats: phrase } }, sizes: window.MyuuelSheetScale || null });
+  me.configure({ wind: false, motion: true });
+  me.audio.begin('output', 'life');
+  me.setSheet(sheet, image);
+
+  // Breathing through the kit's spring, one breath per loop (same signal as the app's director).
+  const smooth = x => x * x * (3 - 2 * x);
+  let clock = 0, last = null;
+  function frame(now) {
+    const dt = last === null ? 0 : Math.min(100, now - last); last = now; clock += dt;
+    const p = (clock % LOOP) / LOOP, b = p < .4 ? smooth(p / .4) : 1 - smooth((p - .4) / .6);
+    me.audio.sample('output', 'life', .007 + .03 * (1 - b));
+    me.update(dt);
+    scene.setBreath(b); scene.frame(dt);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  window.__bannerReady = true;
+})();
+</script>
+</body>
+</html>

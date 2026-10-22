@@ -209,7 +209,14 @@
   /* ── memory method row ── */
   function showMethod(item, state) {
     const el = $('method');
-    if (item) { $('method-name').textContent = item.methodName || ''; $('method-hint').textContent = item.hint || ''; }
+    if (item) {
+      // Each combination comes back for three spaced rounds before it retires; say so, so a return reads as practice, not a repeat.
+      const round = (item.views || 0) + 1, total = engine?.deck().retireAfter || 3;
+      const tag = document.createElement('span'); tag.className = 'method-round';
+      tag.textContent = round > 1 ? ` · round ${Math.min(round, total)} of ${total}` : '';
+      $('method-name').replaceChildren(item.methodName || '', tag);
+      $('method-hint').textContent = item.hint || '';
+    }
     el.classList.toggle('gone', state === 'gone');
     el.classList.toggle('quiet', state === 'quiet');
   }

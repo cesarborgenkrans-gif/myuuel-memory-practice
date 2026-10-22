@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/media/banner.png" alt="Myuuel Memory Practice — Myuuel stands beside a practice card showing the fictional combination O5prgatg! and the sentence it comes from" width="100%">
+<img src="docs/media/banner.webp" alt="Myuuel Memory Practice — Myuuel sits cross-legged and thinks inside a slowly turning ASCII wire sphere, beside a practice card showing the fictional combination O5prgatg! and the sentence it comes from" width="100%">
 
 # Myuuel Memory Practice
 
@@ -38,7 +38,7 @@
 | ✨ | **Check** | It comes back so you can compare. Tap *Again* or *Comfortable* if you like. |
 | 🍃 | **Rest** | A breath before the next one. |
 
-Three combinations rotate at a time; each one retires after three rounds and a fresh one takes its place.
+Three combinations rotate at a time. Each one comes back for **three spaced rounds** (marked *round 2 of 3*, *round 3 of 3*) — seeing it again after a pause is what trains recall — then retires and a fresh one takes its place.
 
 ## Eight memory methods
 
@@ -57,7 +57,7 @@ Each combination is built with a technique, so you practise the *method* as well
 
 Difficulty (*Gentle · Standard · Tough*) changes the length and how many tricks are layered.
 
-**How many are there?** Random strings have more than 500 trillion possibilities even on Gentle, so they practically never repeat. The method-built combinations add up to billions; each method has its own pool at every difficulty, and even the smallest one (Gentle number stories) holds about 2,900. Three are in play at a time, and new ones are invented as old ones retire.
+**How many are there?** Random strings have more than 500 trillion possibilities even on Gentle, so they practically never repeat. The method-built combinations add up to billions; each method has its own pool at every difficulty, and even the smallest one (Gentle number stories) holds about 2,900. Three are in play at a time, and new ones are invented as old ones retire. The words and scenes they are built on come from smaller hand-picked lists, so the app also keeps a short in-memory list of recently used ones and won't bring back a word like PEARL for about an hour of practice.
 
 ## Two themes
 
@@ -80,6 +80,21 @@ npm start
 ```
 
 Or double-click `Start-Myuuel-Memory-Practice.cmd`. Build a portable `.exe` with `npm run dist:win`.
+</details>
+
+<details>
+<summary><b>Is the download safe? Check it yourself</b></summary>
+
+The `.exe` on the Releases page is not built on anyone’s PC. GitHub builds it from the code in this repository ([the workflow](.github/workflows/build-windows.yml)) and signs a **build-provenance attestation**: a public, tamper-proof record of which commit and which workflow produced that exact file.
+
+- **See it:** the [Attestations](../../attestations) page of this repository.
+- **Verify a download** with the [GitHub CLI](https://cli.github.com/):
+  ```bash
+  gh attestation verify Myuuel-Memory-Practice-Windows-x64.exe --repo cesarborgenkrans-gif/myuuel-memory-practice
+  ```
+- **Compare the checksum** with `SHA256SUMS.txt` from the same release: `Get-FileHash Myuuel-Memory-Practice-Windows-x64.exe` in PowerShell.
+
+The app is not code-signed yet, so Windows SmartScreen may say it doesn’t recognise it. Choose *More info → Run anyway*, or build it yourself from source.
 </details>
 
 **Little things to try:** <kbd>Space</kbd> pauses · <kbd>M</kbd> switches mode · poke Myuuel · tap the sky · press and hold the card during *Recall* to peek. Got a small second screen? Choose **▣ → Side screen** once and she’ll open there every time.
