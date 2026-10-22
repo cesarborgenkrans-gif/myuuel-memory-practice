@@ -27,7 +27,6 @@ The SparkleSnap name and logos (`assets/brand/`) are covered separately [below](
 - Use her for political campaigns, scams, phishing or anything meant to deceive, including pages that pretend to be SparkleSnap.
 - Claim her as your own character, or register her name or look as a trademark, design or domain.
 - Sell her, or products featuring her, without asking first. This includes merchandise, paid apps, NFTs and stock-asset packs.
-- Train or tune an AI model to reproduce her, or sell AI-generated images of her.
 
 ## Want to do something else?
 
@@ -37,4 +36,4 @@ Commercial use, merchandise, collaborations or anything not covered here: just a
 
 The SparkleSnap name, watermark and logos may only be used to credit or link to SparkleSnap. Please don't use them as the branding of your own project. In a fork, replace `assets/brand/` with your own mark.
 
-SparkleSnap may update these guidelines, and can ask for a specific use to stop if it goes against their spirit.
+SparkleSnap may update these guidelines, and can ask for a specific use to stop if it goes against their spirit. (^.^)
