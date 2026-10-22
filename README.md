@@ -99,15 +99,25 @@ The app makes no network requests, has no account and collects nothing. Only you
 
 Ideas, bugs, a memory method you love? [**Open an issue**](../../issues/new/choose) — every note is read. If Myuuel helped you, a ⭐ helps others find her.
 
-## Legal
+## Licence — what you can do
 
-**Copyright © 2026 SparkleSnap. All rights reserved.**
-This repository is published so you can read, try and give feedback on the app. No licence to copy, modify or redistribute the code, art or text is granted beyond what GitHub’s Terms of Service allow (viewing and forking on GitHub). For any other use, contact SparkleSnap via [sparklesnap.dev](https://sparklesnap.dev/).
+**Short version: the code is yours to use, and Myuuel is yours to love, as long as you credit her home.**
 
-- **Character and brand.** Myuuel, her artwork and animation, the SparkleSnap name and logos are SparkleSnap’s and may not be used without permission.
-- **Concept.** General ideas — practising recall, using sentences or images to remember — belong to everyone. What is protected here is this particular expression of them: the code, artwork, design and writing.
-- **Educational use only.** The app teaches memory techniques. It is not a password manager, does not check or store passwords, and gives no guarantee about the security of any password you create. For real accounts, use a password manager and unique, randomly generated passwords. Any resemblance between a generated combination and a real password is coincidence.
-- **No warranty.** Provided “as is”, without warranty of any kind; to the extent permitted by law, SparkleSnap is not liable for any loss arising from its use.
+| | Licence | In short |
+|---|---|---|
+| 💻 **Code** — `src/`, `tools/`, start scripts | [MIT](LICENSE) | Clone, learn from, modify, fork and share it freely. Keep the copyright notice. |
+| 🌸 **Myuuel** — her design, art and animation (`assets/myuuel/`, `docs/media/`) | [Character guidelines](CHARACTER-GUIDELINES.md) | Free for fan works, forks and non-commercial projects with credit — *Myuuel © SparkleSnap — sparklesnap.dev*. Keep her kind, make clear it's fan-made, and ask before selling anything with her on it. |
+| ✨ **SparkleSnap name and logos** (`assets/brand/`) | Not licensed | Use them only to credit or link back. A fork uses its own name and mark. |
+
+Myuuel is shared in the spirit of characters like Hatsune Miku and the Touhou cast: made to be drawn, remixed and enjoyed by others, with a clear home.
+
+### Good to know
+
+- **Educational use.** The app teaches memory techniques. It is not a password manager, does not check or store passwords, and promises nothing about the security of any password you create. For real accounts, use a password manager and unique, randomly generated passwords. Any match between a generated combination and a real password is coincidence.
+- **No warranty.** Provided “as is”, as the MIT licence says; SparkleSnap is not liable for any loss arising from its use.
+- **Ideas are free.** Practising recall, or remembering with sentences and pictures, belongs to everyone. Build your own take.
 - **Third-party software.** Built with [Electron](https://www.electronjs.org/) (MIT licence, © OpenJS Foundation and Electron contributors).
+
+© 2026 SparkleSnap.
 
 <div align="center"><sub>Made with care by <a href="https://sparklesnap.dev/">SparkleSnap</a>.</sub></div>
