@@ -59,11 +59,15 @@ Difficulty (*Gentle · Standard · Tough*) changes the length and how many trick
 
 **How many are there?** Random strings have more than 500 trillion possibilities even on Gentle, so they practically never repeat. The method-built combinations add up to billions; each method has its own pool at every difficulty, and even the smallest one (Gentle number stories) holds about 2,900. Three are in play at a time, and new ones are invented as old ones retire. The words and scenes they are built on come from smaller hand-picked lists, so the app also keeps a short in-memory list of recently used ones and won't bring back a word like PEARL for about an hour of practice.
 
-## Two themes
+## See it in action
 
-<img src="docs/media/themes.png" alt="Illustration of the two themes: Lantern Night, a plum night sky with warm gold light, and Living Type, a dark navy grid with a pink ASCII wire sphere" width="100%">
 
-<sub>Illustration made from the app’s character art.</sub>
+
+https://github.com/user-attachments/assets/4e1d9f8c-13ce-45a2-a943-9a78f500f23e
+
+
+
+<sub>28 seconds of the real app: one practice round, Gentle and Tough, both themes (Living Type and Lantern Night), and Myuuel keeping you company. Music: “Myuuel, Solar Explorer (Trailer Version)” by SparkleSnap.</sub>
 
 ## Get started
 
