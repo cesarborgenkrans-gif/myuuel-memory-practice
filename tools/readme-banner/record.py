@@ -4,7 +4,7 @@ social-preview.jpg (for GitHub's Social preview, which takes still images under 
 
     python tools/readme-banner/record.py          (Python 3 with playwright + Pillow)
 
-banner.html runs the app's own Living Type painter and the motion kit's cross-legged Thinking phrase. It is recorded
+banner.html runs the app's own Living Type painter and the motion kit's cross-legged Calm Breathing cycle. It is recorded
 on a virtual clock (virtual_clock.js: timers, animation frames and CSS animations all follow one clock, so every frame
 is exact) in two layers:
   * Myuuel alone, after two warm-up loops, for exactly one 6 s loop — her phrase and breath repeat exactly;
@@ -76,7 +76,7 @@ async def main():
     dur = [round((i + 1) * 1000 / FPS) - round(i * 1000 / FPS) for i in range(N)]   # sums to exactly 6000 ms
     frames[0].save(os.path.join(OUT, 'banner.webp'), save_all=True, append_images=frames[1:], duration=dur, loop=0,
                    quality=86, method=6)
-    poster = frames[int(4.3 * FPS)]                  # hand at her chin
+    poster = frames[0]
     poster.save(os.path.join(OUT, 'banner.png'), optimize=True)
     poster.save(os.path.join(OUT, 'social-preview.jpg'), quality=92, optimize=True, progressive=True)   # GitHub: under 1 MB
     for n in ('banner.webp', 'banner.png', 'social-preview.jpg'):

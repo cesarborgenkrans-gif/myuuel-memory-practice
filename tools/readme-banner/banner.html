@@ -5,7 +5,7 @@
 <meta name="author" content="Cezar Borgkrans (Cesar Borgenkrans) — SparkleSnap">
 <title>Myuuel Memory Practice — README banner</title>
 <!-- The animated README banner, 1280 x 640: the app's own Living Type painter (wire sphere, drifting letters) and the
-     motion kit's cross-legged Thinking phrase. Recorded frame by frame by tools/readme-banner/record.py.
+     motion kit's cross-legged Calm Breathing cycle. Recorded frame by frame by tools/readme-banner/record.py.
      ?layer=bg (background and text) · ?layer=fg (Myuuel only, transparent) · no parameter: everything, live. -->
 <style>
   html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; background: #090b12; }
@@ -62,7 +62,9 @@
   const layer = new URLSearchParams(location.search).get('layer');
   if (layer) { document.documentElement.classList.add(layer); document.body.classList.add(layer); }
   const LOOP = 6000;                                  // the banner loops every 6 s
-  const ID = '16-cross-legged-thinking';
+  // The approved cross-legged Calm Breathing sheet. (The Thinking sheet is not used here: one of its drawings shows a
+  // doubled hand, so it is marked not approved and kept out of public material until it is redrawn.)
+  const ID = '15-cross-legged-calm', SOURCE = 'Myuuel - Sitting - Cross-Legged Calm Breathing.png';
   const KIT = '../../assets/myuuel/motion-kit/';
 
   // Background: the app's Living Type scene, the sphere centred behind her.
@@ -71,17 +73,17 @@
   scene.resize({ cx: 1010, floorY, bandTop: floorY - bandH, bandH, panel: { left: 70, right: 700, top: 368, bottom: 572 } });
   scene.setMood('look');
 
-  // Myuuel: the approved cross-legged Thinking sheet (the original PNG when it is present, else the kit's WebP copy).
+  // Myuuel: the original approved PNG when it is present, else the kit's byte-faithful WebP copy.
   const sheets = await (await fetch(KIT + 'approved-sheets.json')).json();
   const sheet = sheets.find(s => s.id === ID);
   const load = src => new Promise((ok, no) => { const im = new Image(); im.onload = () => ok(im); im.onerror = no; im.src = src; });
   let image;
-  try { image = await load('../../assets/myuuel/approved/' + encodeURIComponent('Myuuel - Sitting - Cross-Legged Thinking.png')); }
+  try { image = await load('../../assets/myuuel/approved/' + encodeURIComponent(SOURCE)); }
   catch { image = await load(KIT + sheet.image.split('/').map(encodeURIComponent).join('/')); }
-  // Her thinking phrase at the app's timing (authored durations x 1.15), resting on the first drawing for the rest of
-  // the loop, so the whole loop is exactly 6 s.
-  const phrase = sheet.durations.map((ms, i) => [i, Math.round(ms * 1.15)]);
-  phrase[0][1] += LOOP - phrase.reduce((s, b) => s + b[1], 0);
+  // Her calm breathing cycle, slowed evenly so one cycle fills the whole 6 s loop exactly.
+  const total = sheet.durations.reduce((s, ms) => s + ms, 0);
+  const phrase = sheet.durations.map((ms, i) => [i, Math.round(ms * LOOP / total)]);
+  phrase[7][1] += LOOP - phrase.reduce((s, b) => s + b[1], 0);
   const registration = { ...(window.MyuuelRegistration || {}), ...(window.MyuuelSeatedRegistration || {}) };
   const me = MyuuelCharacter.create(document.getElementById('me'), { registration, profiles: { [ID]: { beats: phrase } }, sizes: window.MyuuelSheetScale || null });
   me.configure({ wind: false, motion: true });

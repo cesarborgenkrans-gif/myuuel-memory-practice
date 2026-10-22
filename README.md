@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/media/banner.webp" alt="Myuuel Memory Practice — Myuuel sits cross-legged and thinks inside a slowly turning ASCII wire sphere, beside a practice card showing the fictional combination O5prgatg! and the sentence it comes from" width="100%">
+<img src="docs/media/banner.webp" alt="Myuuel Memory Practice — Myuuel sits cross-legged and breathes calmly inside a slowly turning ASCII wire sphere, beside a practice card showing the fictional combination O5prgatg! and the sentence it comes from" width="100%">
 
 # Myuuel Memory Practice
 
